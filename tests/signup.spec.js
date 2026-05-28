@@ -3,7 +3,7 @@ import{Signup} from '../Pages/signup'
 
 const validdatas=require('../util/testdata.json') 
 
-test.only('Signup test in Playwright',async({page})=>{
+test('Signup test in Playwright',async({page})=>{
 
     const signupusername=validdatas[0].validusername
     const signuppassword=validdatas[0].validpassword
@@ -16,8 +16,6 @@ test.only('Signup test in Playwright',async({page})=>{
     await signup1.password.fill(signuppassword)
     await signup1.signupbutton()
 
-
- 
    await page.on('dialog',async dialog=>{ 
 
     expect(dialog.message()).toBe('Sign up successful.') 
@@ -31,12 +29,18 @@ test.only('Signup test in Playwright',async({page})=>{
 })
  
 
-/*test('Close button test in Playwright',async({page})=>{
+test('SignupClose button test in Playwright',async({page})=>{
+
+     const signupuser=validdatas[0].validusername
+    const signupwd=validdatas[0].validpassword
+
     test.setTimeout(60000)
     const signup2=new Signup(page)
     await signup2.goto()
-    await signup2.signupfn("testname05","testpwd05")
+    await signup2.signupfn()
+    await signup2.username.fill(signupuser)
+    await signup2.password.fill(signupwd)
     await signup2.closebutton()
 
    await expect(page).toHaveURL("https://demoblaze.com/") 
-})*/
+})
