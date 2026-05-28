@@ -19,8 +19,7 @@ test.only('Signup test in Playwright',async({page})=>{
 
  
    await page.on('dialog',async dialog=>{ 
-    const alertmessage=dialog.message()
-    console.log("Alert message: ", alertmessage)
+
     expect(dialog.message()).toBe('Sign up successful.') 
     await dialog.accept()
 
