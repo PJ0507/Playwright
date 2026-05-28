@@ -1,0 +1,1 @@
+successmsg : locator('//h2[text()=\'Thank you for your purchase!\']')

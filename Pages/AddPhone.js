@@ -66,9 +66,12 @@ export class AddPhonetoCart{
  async ordersucess(){
 
     const successmsg=this.page.locator("//h2[text()='Thank you for your purchase!']")
+
+    const message=await successmsg.textContent()
+    console.log(message)
      await expect(successmsg).toHaveText("Thank you for your purchase!")
      await this.ok.click()
-     await expect(this.page).toHaveURL("https://demoblaze.com/index.html")
+    await expect(this.page).toHaveURL("https://demoblaze.com/index.html")
  }
     async close(){
         await this.loginclose.click()
