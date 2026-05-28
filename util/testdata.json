@@ -1,0 +1,18 @@
+[
+{
+    "validusername":"preethy",
+"validpassword":"Preethy@30"
+},
+{   
+    "Invalidusername":"standards_user",
+"validpassword1":"Preethy@30"
+},
+{
+      "validusername1":"preethy",
+"Invalidpassword1":"secret_sauce"
+},
+{
+  "Invalidusername2":"standard_user",
+"Invalidpassword2":"secret_sauce"  
+}
+]
